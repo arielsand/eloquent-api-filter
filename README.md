@@ -4,7 +4,7 @@ Awesome and simple way to filter Eloquent queries right from the API call url
 
 # Installation
 ```
-composer require matthenning/eloquent-api-filter
+composer require arielsand/eloquent-api-filter
 ```
 
 #### Usage Example
@@ -14,7 +14,7 @@ composer require matthenning/eloquent-api-filter
 class UserController extends Controller
 {  
     
-    use Matthenning\EloquentApiFilter\Traits\FiltersEloquentApi;
+    use Arielsand\EloquentApiFilter\Traits\FiltersEloquentApi;
     
     public function index(Request $request)
     {
@@ -27,7 +27,7 @@ class UserController extends Controller
 
 **Using the Class**
 ```
-use Matthenning\EloquentApiFilter\EloquentApiFilter;
+use Arielsand\EloquentApiFilter\EloquentApiFilter;
 
 class UserController extends Controller
 {    
@@ -35,7 +35,7 @@ class UserController extends Controller
     {
         $query = User::query();
         
-        $filtered = (new EloquentApiFilter($request, $query))->filter();
+        $filtered = (new EloquentApiFilter($request, $query))->filter(['value' => 'address'], true);
         
         return $filtered->get();
     }
