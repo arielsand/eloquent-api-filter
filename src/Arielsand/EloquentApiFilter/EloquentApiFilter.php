@@ -1,6 +1,6 @@
 <?php
 
-namespace Matthenning\EloquentApiFilter;
+namespace Arielsand\EloquentApiFilter;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;

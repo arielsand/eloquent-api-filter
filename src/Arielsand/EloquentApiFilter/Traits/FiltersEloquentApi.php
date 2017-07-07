@@ -1,6 +1,6 @@
 <?php
 
-namespace Matthenning\EloquentApiFilter\Traits;
+namespace Arielsand\EloquentApiFilter\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;

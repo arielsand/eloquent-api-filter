@@ -22,7 +22,7 @@
   },
   "autoload" : {
     "psr-0" : {
-      "Matthenning\\EloquentApiFilter" : "src"
+      "Arielsand\\EloquentApiFilter" : "src"
     }
   }
 }
