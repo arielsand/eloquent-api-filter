@@ -4,7 +4,7 @@ namespace Arielsand\EloquentApiFilter\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
-use Matthenning\EloquentApiFilter\EloquentApiFilter;
+use Arielsand\EloquentApiFilter\EloquentApiFilter;
 
 /**
  * Class FiltersEloquentApi
