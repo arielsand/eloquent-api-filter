@@ -267,7 +267,12 @@ class MoloquentApiFilter {
      */
     private function replaceWildcards($value)
     {
-        return str_replace('*', '%', $value);
+        if (strpos($value, '*') === 0) {
+            $value = '/.*'.str_replace('*', '', $value).'/i';
+        } elseif (strpos($value, '~') === 0) {
+            $value = '/^'.str_replace('~', '', $value).'/i';
+        }
+        return $value;
     }
 
     /**
@@ -285,6 +290,7 @@ class MoloquentApiFilter {
         $operator = str_replace('lt', '<', $operator);
         $operator = str_replace('le', '<=', $operator);
         $operator = str_replace('eq', '=', $operator);
+        $operator = str_replace('xp', 'regexp', $operator);
 
         return $operator;
     }
@@ -314,7 +320,7 @@ class MoloquentApiFilter {
     private function applyFilterMapping($value, $field, $mapping)
     {
         if (array_key_exists($field , $mapping)) {
-            return  (strpos($value,'*') != 0) ? '*'.$value : $value;
+            return  (empty(strpos($value,'*')) != 0) ? 'xp:~'.$value : $value;
         } else {
             return $value;
         }
