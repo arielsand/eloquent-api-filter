@@ -1,16 +1,20 @@
 {
-  "name": "arielsand/eloquent-api-filter",
+  "name": "arielsand/mongodb-eloquent-api-filter-mapping",
   "description": "Awesome and simple way to filter Monolog/Eloquent queries right from the API call url",
   "authors": [
     {
       "name": "Matthias Henning",
       "email": "pub@matthias-henning.de"
+    },
+    {
+      "name": "Ariel Sand",
+      "email": "ariel.sand@gmail.com"
     }
   ],
   "keywords": [
     "eloquent", "api", "filtering", "mongodb"
   ],
-  "homepage:": "https://github.com/arielsand/eloquent-api-filter",
+  "homepage:": "https://github.com/arielsand/mongodb-eloquent-api-filter-mapping",
   "license": [
     "GPL-3.0"
   ],
@@ -22,7 +26,7 @@
   },
   "autoload" : {
     "psr-0" : {
-      "Arielsand\\EloquentApiFilter" : "src"
+      "Arielsand\\MoloquentApiFilter" : "src"
     }
   }
 }
