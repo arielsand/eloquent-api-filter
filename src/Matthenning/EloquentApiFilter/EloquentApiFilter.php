@@ -35,10 +35,16 @@ class EloquentApiFilter {
     /**
      * @return Builder
      */
-    public function filter()
+    public function filter(array $mapping = null, $search = true)
     {
         if ($this->request->has('filter')) {
             foreach ($this->request->input('filter') as $field=>$value) {
+                if ($search) {
+                    $value = $this->applyFilterMapping($value, $field, $mapping);
+                }
+                if (isset($mapping)) {
+                    $field = $this->applyMappings($field, $mapping);
+                }
                 $this->query = $this->applyFieldFilter($this->query, $field, $value);
             }
         }
@@ -281,4 +287,36 @@ class EloquentApiFilter {
 
         return $operator;
     }
+    /**
+     * Apply mapping to fields names
+     *
+     * @param $field
+     * @param $mapping
+     * @return mixed
+     */
+    private function applyMappings($field, $mapping)
+    {
+        if (array_key_exists($field , $mapping)) {
+            return $mapping[$field];
+        } else {
+            return $field;
+        }
+    }
+    /**
+     * Apply mapping to fields names
+     *
+     * @param $value
+     * @param $field
+     * @param $mapping
+     * @return mixed
+     */
+    private function applyFilterMapping($value, $field, $mapping)
+    {
+        if (array_key_exists($field , $mapping)) {
+            return  (strpos($value,'*') != 0) ? '*'.$value : $value;
+        } else {
+            return $value;
+        }
+    }
+
 }
