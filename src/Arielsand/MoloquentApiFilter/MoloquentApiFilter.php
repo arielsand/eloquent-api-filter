@@ -1,15 +1,15 @@
 <?php
 
-namespace Arielsand\EloquentApiFilter;
+namespace Arielsand\MoloquentApiFilter;
 
 use Jenssegers\Mongodb\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 /**
- * Class EloquentApiFilter
- * @package Matthenning\EloquentApiFilter
+ * Class MoloquentApiFilter
+ * @package Arielsand\MoloquentApiFilter
  */
-class EloquentApiFilter {
+class MoloquentApiFilter {
 
 
     /**
@@ -279,6 +279,7 @@ class EloquentApiFilter {
     private function getFilterOperator($filter)
     {
         $operator = str_replace('notlike', 'not like', $filter);
+        $operator = str_replace('gt', '>', $operator);
         $operator = str_replace('gt', '>', $operator);
         $operator = str_replace('ge', '>=', $operator);
         $operator = str_replace('lt', '<', $operator);

@@ -1,16 +1,16 @@
 <?php
 
-namespace Arielsand\EloquentApiFilter\Traits;
+namespace Arielsand\MoloquentApiFilter\Traits;
 
 use Jenssegers\Mongodb\Eloquent\Builder;
 use Illuminate\Http\Request;
-use Arielsand\EloquentApiFilter\EloquentApiFilter;
+use Arielsand\MoloquentApiFilter\MoloquentApiFilter;
 
 /**
- * Class FiltersEloquentApi
- * @package Matthenning\EloquentApiFilter
+ * Class FiltersMoloquentApi
+ * @package Arielsand\MoloquentApiFilter
  */
-trait FiltersEloquentApi {
+trait FiltersMoloquentApi {
 
     /**
      * @param Request $request
@@ -19,7 +19,7 @@ trait FiltersEloquentApi {
      */
     protected function filterApiRequest(Request $request, Builder $query, array $mapping=null, $search=false)
     {
-        $eaf = new EloquentApiFilter($request, $query);
+        $eaf = new MoloquentApiFilter($request, $query);
         return $eaf->filter($mapping, $search);
     }
 
