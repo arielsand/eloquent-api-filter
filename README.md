@@ -4,7 +4,7 @@ Awesome and simple way to filter Monolog/Eloquent queries right from the API cal
 
 # Installation
 ```
-composer require arielsand/eloquent-api-filter
+composer require arielsand/mongodb-eloquent-api-filter-mapping
 ```
 
 #### Usage Example
@@ -14,7 +14,7 @@ composer require arielsand/eloquent-api-filter
 class UserController extends Controller
 {  
     
-    use Arielsand\EloquentApiFilter\Traits\FiltersEloquentApi;
+    use Arielsand\MoloquentApiFilter\Traits\FiltersMoloquentApi;
     
     public function index(Request $request)
     {
@@ -27,7 +27,7 @@ class UserController extends Controller
 
 **Using the Class**
 ```
-use Arielsand\EloquentApiFilter\EloquentApiFilter;
+use Arielsand\MoloquentApiFilter\MoloquentApiFilter;
 
 class UserController extends Controller
 {    
@@ -35,7 +35,7 @@ class UserController extends Controller
     {
         $query = User::query();
         
-        $filtered = (new EloquentApiFilter($request, $query))->filter(['value' => 'address'], true);
+        $filtered = (new MoloquentApiFilter($request, $query))->filter(['value' => 'address'], true);
         
         return $filtered->get();
     }
