@@ -1,5 +1,5 @@
 # eloquent-api-filter
-Awesome and simple way to filter Eloquent queries right from the API call url
+Awesome and simple way to filter Monolog/Eloquent queries right from the API call url
 
 
 # Installation

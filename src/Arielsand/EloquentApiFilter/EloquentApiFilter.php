@@ -2,7 +2,7 @@
 
 namespace Arielsand\EloquentApiFilter;
 
-use Illuminate\Database\Eloquent\Builder;
+use Jenssegers\Mongodb\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 /**

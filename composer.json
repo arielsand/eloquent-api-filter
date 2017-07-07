@@ -1,6 +1,6 @@
 {
   "name": "arielsand/eloquent-api-filter",
-  "description": "Awesome and simple way to filter Eloquent queries right from the API call url",
+  "description": "Awesome and simple way to filter Monolog/Eloquent queries right from the API call url",
   "authors": [
     {
       "name": "Matthias Henning",
@@ -8,7 +8,7 @@
     }
   ],
   "keywords": [
-    "eloquent", "api", "filtering"
+    "eloquent", "api", "filtering", "mongodb"
   ],
   "homepage:": "https://github.com/arielsand/eloquent-api-filter",
   "license": [
@@ -17,7 +17,7 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=5.6.4",
-    "illuminate/database": "~5.4",
+    "jenssegers/mongodb": "~3.2",
     "illuminate/http": "~5.4"
   },
   "autoload" : {

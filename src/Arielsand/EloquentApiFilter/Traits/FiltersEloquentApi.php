@@ -2,7 +2,7 @@
 
 namespace Arielsand\EloquentApiFilter\Traits;
 
-use Illuminate\Database\Eloquent\Builder;
+use Jenssegers\Mongodb\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Arielsand\EloquentApiFilter\EloquentApiFilter;
 
@@ -17,10 +17,10 @@ trait FiltersEloquentApi {
      * @param Builder $query
      * @return Builder
      */
-    protected function filterApiRequest(Request $request, Builder $query)
+    protected function filterApiRequest(Request $request, Builder $query, array $mapping=null, $search=false)
     {
         $eaf = new EloquentApiFilter($request, $query);
-        return $eaf->filter();
+        return $eaf->filter($mapping, $search);
     }
 
 }
