@@ -24,7 +24,8 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=7.2",
-    "jenssegers/mongodb": "^3.7"
+    "jenssegers/mongodb": "^3.7",
+    "illuminate/http": ">=5.4"
   },
   "autoload": {
     "psr-0": {
